@@ -1,7 +1,7 @@
 import React , {useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
-import {images} from '../../constants'
+import { AppWrap } from '../../wrapper';
 
 import './About.scss'; //importing the About.scss file
 
@@ -14,8 +14,7 @@ const About = () => {
     const query = '*[_type == "abouts"]';
 
     client.fetch(query)
-    .then((data)=>{setAbouts(data);
-    });
+    .then((data)=>setAbouts(data))
   }, []);
   
   return (
@@ -35,7 +34,7 @@ const About = () => {
           className = "app__profile-item"
           key = {about.title + index}
           >
-            <img src={urlFor(about.image).toString()} alt={about.title} />
+            <img src={urlFor(about.imageUrl).toString()} alt={about.title} />
     
             <h2 className='bold-text' style={{marginTop: 20}}>{about.title}</h2>
             <p className='p-text' style={{marginTop: 10}}>{about.description}</p>
@@ -51,4 +50,4 @@ const About = () => {
   );
 };
 
-export default About
+export default AppWrap(About,'about');
