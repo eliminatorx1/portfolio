@@ -1,0 +1,202 @@
+.app__navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.25); //the first three arguments are the values for the red, green, and the blue color and the fourth argument is for the opacity of the color
+    backdrop-filter: blur(4px); //this will create a blurry background around the navigation bar when we scroll down
+    -webkit-backdrop-filter: blur(4px); //the above property is not available on all the browsers so we use this property
+    border: 1px solid rgba(255, 255, 255,0.18);
+    position:fixed; //so that it always stays on the top
+    z-index: 2; //to make it appear on top of all the other elements
+}
+
+.app__navbar-logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img{
+        //appling nested css applicable only in the scss since img comes under the navbar so we can apply the nested css here
+        width: 150px;
+        height: 100px;
+
+        @media screen and (min-width: 2000px) {
+            //adding the media querry to make it responsive
+            width: 200px;
+            height: 60px;
+            
+        }
+
+    }
+
+
+}
+
+.app__navbar-links{
+    flex: 1; //this will allow the links to take up the space that the logo doesn't take
+    display: flex; //since we have applied the display flex so the items will appear in the row
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    
+    li{
+        //targetting the individual li itmes inside the links container
+        margin: 0 2rem;
+        cursor: pointer; //changing the cursor from arror to the pointer
+        flex-direction: column;
+        
+
+        div{
+            //applying the nested css
+            width: 5px;
+            //this div is to create a small cirle over the nav bar
+            height: 5px;
+            background: transparent;
+            border-radius: 50%; //border radius is 50px to make it a circle
+         
+            // padding: 5px;
+            
+         
+        }
+
+        a{
+            //targetting the anchor tag inside the div tag
+            color: var(--gray--color); //this is fetching colors from the index.css file
+            text-decoration: none;
+            flex-direction: column;
+            text-transform: uppercase; //this will convert the text to the uppercase
+            font-weight: 500; //this will make the font bolder
+            padding: 3px;
+            
+            
+
+            transition: all 0.3s ease-in-out; //applying a transition , this transition will be visible once we add the hover 
+
+            &:hover{
+                //here & indicates that hover is refering to a i.e element just outside, it is equal to a:hover
+                color:red; //here due to the transition effect the color will change slowly
+                text-decoration: underline;
+
+            }
+
+
+        }
+
+        &:hover{
+            //adding hover to the li
+            div{
+                background:red ;
+
+
+            }
+
+        }
+
+    }
+
+    @media screen  and (max-width: 900px) {
+        display: none;
+        
+    }
+
+}
+
+.app__navbar-menu{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: grey ;
+    
+
+    svg{
+        //svg is simply the HiX button inside the motion div
+        width: 70%;
+        height: 70%;
+        color: white;
+    }
+
+    div{
+        position: fixed;
+        top: 0;
+        bottom:0;
+        right: 0;
+        z-index: 5;
+        padding: 1 rem;
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+        background: url('../../assets/bgWhite.png');
+        background-color: var(--white-color) ;
+        background-size: cover;
+        background-repeat: repeat;
+        box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+
+        svg{
+             //svg is simply the HiX button inside the motion div
+                width: 35px;
+                height: 35px;
+                color: grey;
+                margin: 0.5rem 1rem;
+
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            li{
+                margin: 1rem;
+                a{
+                    color: var(--gray-color);
+                    text-decoration: none;
+                    font-size: 1rem;
+                    text-transform:uppercase ;
+                    font-weight:500 ;
+
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover{
+                        color: red;
+                        text-decoration: underline;
+                    }
+
+
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+        @media screen  and (min-width: 900px) {
+            display:none;
+            
+        }
+    }
+    @media screen  and (min-width: 900px) {
+        display:none;
+        
+    }
+
+}

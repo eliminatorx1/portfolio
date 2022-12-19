@@ -1,0 +1,22 @@
+import React from 'react'
+
+const NavigationDots = ({active}) => {
+  return (
+    <div className='app__navigation'>
+         {["home", "about","work","skills","testimonials","contact" ].map((item, index) =>(
+                      
+                    <a 
+                        href={`#${item}`} 
+                        key= {item + index}
+                        className = "app__navigation-dot"
+                        style={active === item?{backgroundcolor: '#313BAC'}: {} }
+                    />
+                    //in scss we can make any tag self closing
+                        
+                      
+            ))}
+    </div>
+  );
+}
+
+export default NavigationDots;
