@@ -9,10 +9,28 @@ import {urlFor, client} from '../../client';
 import './Work.scss';
 
 const Work = () => {
+  const [activeFilter, setActiveFilter] = useState("All")
+
+  const handleWorkFilter = (item) => {
+
+  }
   return (
    <>
-    <h2 className='head-text'>Welcome <span style = {{color:'green'}}> To My Portfolio!</span>
-    </h2>
+    <h2 className='head-text'>Welcome <span style = {{color:'#03C03C'}}> To My Portfolio!</span></h2>
+
+    <div className='app__work-filter'>
+      {
+        ["UI/UX", "Web App", "Mobile App", "React JS", "All"].map((item, index) => (
+         <div
+         key={index}
+         onClick = {() => handleWorkFilter(item)}
+         className = {`app__work-filter-item app__flex p-text ${activeFilter === item? 'item-active': ''}`}
+         >
+          {item}
+        </div>
+        ))
+      }
+    </div>
    </>
   )
 }
