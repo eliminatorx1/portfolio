@@ -10,7 +10,7 @@ import './Work.scss';
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All")
-  const [animateCard, setanimateCard] = useState({y: 0, opacity: 1});
+  const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
 
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -24,7 +24,7 @@ const Work = () => {
       .then((data) =>{
         setWorks(data);
         setFilterWork(data);
-      })
+      });
   
   }, [])
   
@@ -63,10 +63,10 @@ const Work = () => {
               transition = {{duration: 0.25, ease:"easeInOut", staggerChildren:0.5}}
               className = "app__work-hover app__flex">
                 {/* staggerChildren means we want to show the children one by one  */}
-                <a href={work.projectLink} target = "_blank" rel='noreferrer'>
+                <a href={work.projectLink} target = "_blank" rel="noreferrer">
                   <motion.div
                   whileInView={{scale: [0, 1]}}
-                  whileHover={{scale:[1,0.9]}}
+                  whileHover={{scale:[1,0.90]}}
                   transition = {{duration: 0.25}}
                   className = "app__flex" 
                   >
@@ -74,10 +74,10 @@ const Work = () => {
 
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target = "_blank" rel='noreferrer'>
+                <a href={work.codeLink} target = "_blank" rel="noreferrer">
                   <motion.div
                   whileInView={{scale: [0, 1]}}
-                  whileHover={{scale:[1,0.9]}}
+                  whileHover={{scale:[1,0.90]}}
                   transition = {{duration: 0.25}}
                   className = "app__flex" 
                   >
@@ -90,18 +90,18 @@ const Work = () => {
 
           </div>
 
-          <div className='app__work-content app__flex'>
+          <div className="app__work-content app__flex">
             <h4 className='bold-text'>{work.title}</h4>
             <p className='p-text' style={{marginTop: 10}}>{work.description}</p>
-            <div className='app__work-tag app__flex'></div>
-              <p className='p-text'>{work.tags[0]}</p>
+            <div className="app__work-tag app__flex"></div>
+              <p className="p-text" id="p">{work.tags[0]}</p>
           </div>
         </div>
       ))}
 
     </motion.div>
    </>
-  )
-}
+  );
+};
 
 export default AppWrap(Work,'work');
