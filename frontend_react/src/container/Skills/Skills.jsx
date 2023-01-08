@@ -2,11 +2,12 @@ import React , {useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import  {Tooltip as ReactTooltip} from '@mui/material';
 
-import {AppWrap} from '../../wrapper';
+import {AppWrap, MotionWrap} from '../../wrapper';
 import {urlFor, client} from '../../client';
 
 
 import './Skills.scss';
+import { style } from '@mui/system';
 
 const Skills = () => {
 
@@ -29,7 +30,7 @@ const Skills = () => {
   }, [])
   return (
     <>
-      <h2 className='head-text'>Skills & Experience</h2>
+      <h2 className='head-text' >Skills & <span style={{color: "red" }}>Experience</span> </h2>
 
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
@@ -76,14 +77,11 @@ const Skills = () => {
                   id = {work.name}
                   title = {work.desc}
                   effect = "solid"
-                 
                   arrow
                   className = "skills-tooltip"
                   >
                     
-                     <h4 className='bold-text'>{work.name}</h4>
-                     
-                  
+                    <h4 className='bold-text'>{work.name}</h4>
       
                   </ReactTooltip>
                    <p className='p-text'>{work.company}</p>
@@ -108,4 +106,8 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default AppWrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  "app__whitebg"
+  );
