@@ -36,7 +36,8 @@ const Skills = () => {
           {skills.map((skill) =>(
             <motion.div
               whileInView={{opacity:[0, 1]}}
-              transition = {{duration: 0.5}}
+              whileHover={{scale: 1.1}}
+              transition = {{duration: 0.1, type: 'tween'}}
               className = "app__skills-item app__flex"
               key = {skill.name}
               >
@@ -46,9 +47,6 @@ const Skills = () => {
                 </div>
                 <p className='p-text'>{skill.name}</p>
             </motion.div>
-
-
-
           ))}
 
         </motion.div>
