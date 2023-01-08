@@ -30,6 +30,21 @@ const Work = () => {
   
 
   const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{y:100, opacity: 0}]); //this will retrigger the shuffle animation of the card
+
+    setTimeout(() => { //setTimeout is an inbuilt function in react
+      setAnimateCard([{y:0, opacity: 1}]);
+
+      if(item === 'All'){
+        setFilterWork(works);
+
+      }
+      else{
+        setFilterWork(works.filter((work) => work.tags.includes(item)))
+      }
+
+    },500) //here 500 is in milliseconds i.e it accepts the time in milliseconds
 
   }
   return (
