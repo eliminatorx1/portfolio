@@ -1,6 +1,6 @@
 import React , {useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
-import {Tooltip as ReactTooltip} from 'react-tooltip';
+import  {Tooltip as ReactTooltip} from 'react-tooltip';
 
 import {AppWrap} from '../../wrapper';
 import {urlFor, client} from '../../client';
@@ -62,9 +62,9 @@ const Skills = () => {
               <motion.div className='app__skills-exp-works'>
                 {experience.works.map((work) =>(
                   <>
-                  <motion.dvi
+                  <motion.div
                   whileInView={{opacity:[0, 1]}}
-                  whileHover={{scale: 1.1}}
+                  // whileHover={{scale: 1.1}}
                   transition = {{duration: 0.1, type: 'tween'}}
                   className = "app__skills-exp-work app__flex"
                   data-tip 
@@ -73,7 +73,7 @@ const Skills = () => {
                   >
                     <h4 className='bold-text'>{work.name}</h4>
                     <p className='p-text'>{work.company}</p>
-                  </motion.dvi>
+                  </motion.div>
                   <ReactTooltip
                   id = {work.name}
                   effect = "solid"
