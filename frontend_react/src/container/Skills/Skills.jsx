@@ -71,14 +71,13 @@ const Skills = () => {
                   data-for = {work.name}
                   key = {work.name}
                   >
-                   <p className='p-text'>{work.company}</p>
-                    
-                  </motion.div>
+
                   <ReactTooltip
                   id = {work.name}
                   title = {work.desc}
                   effect = "solid"
-                  
+                 
+                  arrow
                   className = "skills-tooltip"
                   >
                     
@@ -87,6 +86,10 @@ const Skills = () => {
                   
       
                   </ReactTooltip>
+                   <p className='p-text'>{work.company}</p>
+                    
+                  </motion.div>
+                  
                   </>
                   
                 ))}
