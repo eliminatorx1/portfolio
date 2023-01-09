@@ -57,8 +57,9 @@ const Footer = () => {
           <img src={images.mobile} alt = "mobile"/>
           <a href='tel:8287592269' className='p-text'>8287592269</a>
         </div>
+      </div>
 
-      {!isFormSubmitted}
+      {!isFormSubmitted?
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input className='p-text' name = "name" type="text" placeholder = "Your Name" value = {name} onChange = {handleChangeInput}/>
@@ -71,14 +72,17 @@ const Footer = () => {
               className='p-text'
               placeholder='Your Message'
               value={message}
-              name = {message}
+              name = "message"
               onChange = {handleChangeInput}
               />
           </div>
           <button type='button' className='p-text' onClick={handleSubmit}>{loading?'sending' :'Send Message'}</button>
         </div>
+        :<div>
+          <h3 className='head-text'>Thank you for getting in touch!</h3>
+        
 
-      </div>
+      </div>}
     </>
   )
 }
