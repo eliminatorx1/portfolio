@@ -38,7 +38,9 @@ const Testimonial = () => {
 
   return (
     <>
-   
+    <div>
+    <h2 className='head-text' >Welcome to <span style={{color:"red"}}>Testimonials Section</span>  </h2>
+    </div>
     {testimonials.length &&(
       <>
         <div className='app__testimonial-item app__flex'>

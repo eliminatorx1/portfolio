@@ -30,7 +30,7 @@ const Skills = () => {
   }, [])
   return (
     <>
-      <h2 className='head-text' >Skills & <span style={{color: "red" }}>Experience</span> </h2>
+      <h2 id = "testimonial" className='head-text' >Skills & <span style={{color: "red" }}>Experience</span> </h2>
 
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
