@@ -55,14 +55,14 @@ const Footer = () => {
         </div>
         <div className='app__footer-card'>
           <img src={images.mobile} alt = "mobile"/>
-          <a href='tel:8287592269' className='p-text'>828759.....</a>
+          <a href='tel:8287592269' className='p-text'>8287592269</a>
         </div>
       </div>
 
       {!isFormSubmitted?
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
-            <input className='p-text' name = "name" type="text" required placeholder = "Your Name" value = {name} onChange = {handleChangeInput} />
+            <input className='p-text' name = "name" type="text" required="true" placeholder = "Your Name" value = {name} onChange = {handleChangeInput} />
           </div>
           <div className='app__flex'>
             <input className='p-text' name = "email" type="email" placeholder = "Your Email" value = {email} onChange = {handleChangeInput} required/>
