@@ -20,8 +20,9 @@ const About = () => {
   return (
    <>
     <h2 className='head-text'>
-       Code Never lies
-       <span style = {{color:'red'}}> Comments Sometimes do! </span>
+      
+       <span style = {{color:'red'}}> About </span>
+       Me :)
     </h2>
     <div className='app__profiles'>
       {/* looping through the about section  */}

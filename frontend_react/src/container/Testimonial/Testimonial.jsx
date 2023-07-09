@@ -39,13 +39,13 @@ const Testimonial = () => {
   return (
     <>
     <div>
-    <h2 className='head-text' >Welcome to <span style={{color:"red"}}>Testimonials Section</span>  </h2>
+    <h2 className='head-text' >Position <span style={{color:"red"}}> of Responsibilities</span>  </h2>
     </div>
     {testimonials.length &&(
       <>
         <div className='app__testimonial-item app__flex'>
         <img src={urlFor(test.imgurl)} alt={testimonials[currentIndex].name} />
-        {/* {console.log("this is the debug" ,urlFor(testimonials[currentIndex].imgurl).url())} */}
+        {console.log("this is the debug" ,urlFor(testimonials[currentIndex].imgurl).url())}
           <div className='app__testimonial-content'>
             <p className='p-text'>{test.feedback}</p>
             <div>
@@ -68,7 +68,7 @@ const Testimonial = () => {
 
     )}
 
-    <div className='app__testimonials-brands app__flex'>
+    {/* <div className='app__testimonials-brands app__flex'>
       {brands.map((brand) =>(
         <motion.div
         whileInView={{opacity:[0, 1]}}
@@ -80,7 +80,7 @@ const Testimonial = () => {
 
         </motion.div>
       ))}
-    </div>
+    </div> */}
 
 
     </>
