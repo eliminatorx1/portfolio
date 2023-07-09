@@ -48,11 +48,11 @@ const Testimonial = () => {
         {console.log("this is the debug" ,urlFor(testimonials[currentIndex].imgurl).url())}
           <div className='app__testimonial-content'>
             <p className='p-text'>{test.feedback}</p>
-            <div>
+            {/* <div>
               <h4 className='bold-text'>{test.name}</h4>
               <h5 className='p-text'>{test.company}</h5>
 
-            </div>
+            </div> */}
           </div>
         </div>
         <div className='app__testimonial-btns app__flex'>

@@ -51,7 +51,7 @@ const Skills = () => {
           ))}
 
         </motion.div>
-        <motion.div className='app__skills-exp'>
+        {/* <motion.div className='app__skills-exp'>
           {experience?.map((experience) => (
             <motion.div
             className='app__skills-exp-item'
@@ -98,7 +98,17 @@ const Skills = () => {
           ))}
             
 
-        </motion.div>
+        </motion.div> */}
+
+      </div>
+      <div id='otherskills'>
+        <h2>IDEs and <span style={{color:"red"}}>Other Skills</span></h2>
+        <ul>
+          <li >Visual Studio code</li>
+          <li >Jupyter Notebook</li>
+          <li >Matplotlib</li>
+
+        </ul>
 
       </div>
     </>
